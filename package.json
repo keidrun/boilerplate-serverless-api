@@ -1,0 +1,51 @@
+{
+  "name": "boilerplate-serverless-api",
+  "version": "0.0.1",
+  "description": "Boilerplate of Serverless framework with DynamoDB for API.",
+  "repository": "https://github.com/keidrun/boilerplate-serverless-api.git",
+  "author": "Keid",
+  "license": "MIT",
+  "dependencies": {
+    "dynamoose": "^0.8.7",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "serverless-dynamodb-local": "^0.2.28",
+    "serverless-offline": "^3.20.3",
+    "serverless-webpack": "^3.1.1",
+    "webpack": "^3.3.0"
+  },
+  "scripts": {
+    "start": "sls offline start",
+    "debug": "SLS_DEBUG=* sls offline start",
+    "db:init": "sls dynamodb install",
+    "db:start": "sls dynamodb start",
+    "db:seed": "sls dynamodb seed",
+    "dev:deploy": "sls deploy -s dev --env development",
+    "dev:info": "sls info -s dev",
+    "dev:rm": "sls remove -s dev",
+    "dev:logs:getTodos": "sls logs -f getTodos -s dev -t",
+    "dev:logs:getTodo": "sls logs -f getTodo -s dev -t",
+    "dev:logs:addTodo": "sls logs -f addTodo -s dev -t",
+    "dev:logs:removeTodo": "sls logs -f removeTodo -s dev -t",
+    "staging:deploy": "sls deploy -s staging --env staging",
+    "staging:info": "sls info -s staging",
+    "staging:rm": "sls remove -s staging",
+    "staging:logs:getTodos": "sls logs -f getTodos -s staging -t",
+    "staging:logs:getTodo": "sls logs -f getTodo -s staging -t",
+    "staging:logs:addTodo": "sls logs -f addTodo -s staging -t",
+    "staging:logs:removeTodo": "sls logs -f removeTodo -s staging -t",
+    "prod:deploy": "sls deploy -s prod --env production",
+    "prod:info": "sls info -s prod",
+    "prod:rm": "sls remove -s prod",
+    "prod:logs:getTodos": "sls logs -f getTodos -s prod -t",
+    "prod:logs:getTodo": "sls logs -f getTodo -s prod -t",
+    "prod:logs:addTodo": "sls logs -f addTodo -s prod -t",
+    "prod:logs:removeTodo": "sls logs -f removeTodo -s prod -t"
+  }
+}

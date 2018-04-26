@@ -44,7 +44,7 @@ package:
 
 functions:
   getTodos:
-    handler: api/todoHandlers.getTodos
+    handler: handler.getTodos
     events:
       - http:
           method: get
@@ -52,7 +52,7 @@ functions:
           private: true
           cors: false
   getTodo:
-    handler: api/todoHandlers.getTodo
+    handler: handler.getTodo
     events:
       - http:
           path: todos/{id}
@@ -60,7 +60,7 @@ functions:
           private: true
           cors: false
   addTodo:
-    handler: api/todoHandlers.addTodo
+    handler: handler.addTodo
     events:
       - http:
           path: todos
@@ -68,7 +68,7 @@ functions:
           private: true
           cors: false
   removeTodo:
-    handler: api/todoHandlers.removeTodo
+    handler: handler.removeTodo
     events:
       - http:
           path: todos/{id}
@@ -76,7 +76,7 @@ functions:
           private: true
           cors: false
   updateTodo:
-    handler: api/todoHandlers.updateTodo
+    handler: handler.updateTodo
     events:
       - http:
           path: todos/{id}

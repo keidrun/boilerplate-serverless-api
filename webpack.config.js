@@ -6,10 +6,17 @@ module.exports = {
   entry: slsw.lib.entries,
   target: 'node',
   module: {
-    loaders: [
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: ['eslint-loader'],
+        enforce: 'pre',
+        include: __dirname,
+        exclude: /node_modules/
+      },
       {
         test: /\.js$/,
-        loaders: ['babel-loader'],
+        use: ['babel-loader'],
         include: __dirname,
         exclude: /node_modules/
       }

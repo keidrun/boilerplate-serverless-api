@@ -7,7 +7,6 @@ let defaultOptions = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  // Drop the old database and Create the new database
   defaultOptions.create = false;
 
   dynamoose.AWS.config.update({
@@ -15,17 +14,14 @@ if (process.env.NODE_ENV === 'production') {
     secretAccessKey: process.env.DYNAMO_AWS_SECRET_ACCESS_KEY,
     region: process.env.DYNAMO_AWS_REGION
   });
-} else if (
-  process.env.NODE_ENV === 'staging' ||
-  process.env.NODE_ENV === 'development'
-) {
+} else if (process.env.NODE_ENV === 'staging') {
   dynamoose.AWS.config.update({
     accessKeyId: process.env.DYNAMO_AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.DYNAMO_AWS_SECRET_ACCESS_KEY,
     region: process.env.DYNAMO_AWS_REGION
   });
 } else {
-  //localhost
+  // process.env.NODE_ENV === 'development' or others
   dynamoose.AWS.config.update({
     region: 'localhost'
   });

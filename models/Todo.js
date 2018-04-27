@@ -15,12 +15,12 @@ const todoSchema = new Schema(
       type: String,
       hashKey: true
     },
-    todo: {
+    task: {
       type: String,
       required: true
     },
     completed: {
-      type: Boolean,
+      type: Boolean, // stored as String
       default: false
     }
   },

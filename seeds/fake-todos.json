@@ -1,27 +1,37 @@
 [
   {
     "id": "cb3dc780-484f-11e8-a0b9-c36d84fa8971",
-    "todo": "Make a breakfast",
-    "completed": false
+    "task": "Make a breakfast",
+    "completed": "false",
+    "createdAt": 1524831297800,
+    "updatedAt": 1524831297800
   },
   {
     "id": "0484b670-4850-11e8-a314-0f0722a4de1e",
-    "todo": "Go shopping",
-    "completed": false
+    "task": "Go shopping",
+    "completed": "false",
+    "createdAt": 1524831297800,
+    "updatedAt": 1524831297800
   },
   {
     "id": "0cbb5fb0-4850-11e8-9314-4780e54916ff",
-    "todo": "Buy summer clothes",
-    "completed": false
+    "task": "Buy summer clothes",
+    "completed": "false",
+    "createdAt": 1524831297800,
+    "updatedAt": 1524831297800
   },
   {
     "id": "13a25770-4850-11e8-9b9c-b7fc265a171f",
-    "todo": "Have a coffee",
-    "completed": true
+    "task": "Have a coffee",
+    "completed": "true",
+    "createdAt": 1524831833039,
+    "updatedAt": 1524831833039
   },
   {
     "id": "1ca74d30-4850-11e8-a39f-93ec995e33ac",
-    "todo": "Reserve a movie ticket",
-    "completed": true
+    "task": "Reserve a movie ticket",
+    "completed": "true",
+    "createdAt": 1524831833039,
+    "updatedAt": 1524831833039
   }
 ]

@@ -1,11 +1,11 @@
 import uuid from 'uuid';
 import Todo from '../models/Todo';
 
-// curl -X POST -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"todo":"Add new todo"}' http://localhost:3000/todos
+// curl -X POST -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"task":"Add new todo"}' http://localhost:3000/todos
 const addTodo = (event, context, callback) => {
   const body = JSON.parse(event.body);
-  const { todo } = body;
-  if (!todo) {
+  const { task } = body;
+  if (!task) {
     return callback(null, {
       statusCode: 400,
       body: JSON.stringify({
@@ -14,7 +14,7 @@ const addTodo = (event, context, callback) => {
     });
   }
 
-  const newTodo = new Todo({ id: uuid.v1(), todo });
+  const newTodo = new Todo({ id: uuid.v1(), task });
   newTodo
     .save()
     .then(addedTodo =>

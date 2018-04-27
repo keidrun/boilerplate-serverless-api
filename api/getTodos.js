@@ -2,7 +2,7 @@ import Todo from '../models/Todo';
 
 // curl -H 'x-api-key:MY_API_KEY' http://localhost:3000/todos
 const getTodos = (event, context, callback) => {
-  return Todo.scan()
+  Todo.scan()
     .exec()
     .then(todos =>
       callback(null, {

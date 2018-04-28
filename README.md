@@ -34,14 +34,14 @@ Note that you must replace propeties, which are `{YOUR_AWS_ID}`, `{YOUR_AWS_KEY}
 
 ## API endpoints
 
-After `yarn dev:deploy`, endpoints are below.
+After `yarn prod:deploy`, endpoints are below.
 Http header `x-api-key` is requred to request.
 
-* GET - `https://YOUR_AWS_URL/dev/todos`
-* GET - `https://YOUR_AWS_URL/dev/todos/{id}`
-* POST - `https://YOUR_AWS_URL/dev/todos`
-* DELETE - `https://YOUR_AWS_URL/dev/todos/{id}`
-* PATCH - `https://YOUR_AWS_URL/dev/todos/{id}`
+* GET - `https://YOUR_AWS_URL/prod/todos`
+* GET - `https://YOUR_AWS_URL/prod/todos/{id}`
+* POST - `https://YOUR_AWS_URL/prod/todos`
+* DELETE - `https://YOUR_AWS_URL/prod/todos/{id}`
+* PATCH - `https://YOUR_AWS_URL/prod/todos/{id}`
 
 If you wanna work locally, do `yarn db:init` for dynamodb-local, then do `yarn start`.
 Local endpoins are below.

@@ -6,15 +6,15 @@ import Todo from '../models/Todo';
 const updateTodo = (event, context, callback) => {
   const { id } = event.pathParameters;
   const { task, completed } = JSON.parse(event.body);
+  let todo = {};
+  if (task) todo.task = task;
+  if (completed) todo.completed = completed;
 
-  Todo.update({ id }, { $PUT: { task, completed } })
+  Todo.update({ id }, { $PUT: todo })
     .then(updatedTodo =>
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify({
-          message: `Updated the todo of id:${id}`,
-          updatedTodo
-        })
+        body: JSON.stringify(updatedTodo)
       })
     )
     .catch(err =>

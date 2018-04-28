@@ -41,6 +41,7 @@ package:
   include:
     - api/**
     - models/**
+    - services/**
 
 functions:
   getTodos:

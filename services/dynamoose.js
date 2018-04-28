@@ -14,18 +14,17 @@ if (process.env.NODE_ENV === 'production') {
     secretAccessKey: process.env.DYNAMO_AWS_SECRET_ACCESS_KEY,
     region: process.env.DYNAMO_AWS_REGION
   });
-} else if (process.env.NODE_ENV === 'staging') {
+} else {
+  // NODE_ENV === 'development', 'staging' or others
   dynamoose.AWS.config.update({
     accessKeyId: process.env.DYNAMO_AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.DYNAMO_AWS_SECRET_ACCESS_KEY,
     region: process.env.DYNAMO_AWS_REGION
   });
-} else {
-  // process.env.NODE_ENV === 'development' or others
-  dynamoose.AWS.config.update({
-    region: 'localhost'
-  });
-  dynamoose.local('http://localhost:8000');
+  // Work locally when the region is 'localhost'
+  if (dynamoose.AWS.config.region === 'localhost') {
+    dynamoose.local('http://localhost:8000');
+  }
 }
 
 dynamoose.setDefaults(defaultOptions);

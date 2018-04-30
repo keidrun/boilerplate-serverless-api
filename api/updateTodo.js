@@ -1,8 +1,8 @@
 import Todo from '../models/Todo';
 
-// curl -X PATCH -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"task":"Update the todo", "completed":true}' http://localhost:3000/todos/cb3dc780-484f-11e8-a0b9-c36d84fa8971
-// curl -X PATCH -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"task":"Update the todo only"}' http://localhost:3000/todos/cb3dc780-484f-11e8-a0b9-c36d84fa8971
-// curl -X PATCH -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"completed":true}' http://localhost:3000/todos/cb3dc780-484f-11e8-a0b9-c36d84fa8971
+// curl -X PATCH -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"task":"Update the todo", "completed":true}' http://localhost:3000/todos/87dd235b-909d-4381-ab4e-8b3cd20af34b
+// curl -X PATCH -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"task":"Update the todo only"}' http://localhost:3000/todos/87dd235b-909d-4381-ab4e-8b3cd20af34b
+// curl -X PATCH -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"completed":true}' http://localhost:3000/todos/87dd235b-909d-4381-ab4e-8b3cd20af34b
 const updateTodo = (event, context, callback) => {
   const { id } = event.pathParameters;
   const { task, completed } = JSON.parse(event.body);

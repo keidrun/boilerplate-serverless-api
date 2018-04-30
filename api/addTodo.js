@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import Todo from '../models/Todo';
 
 // curl -X POST -H 'Content-Type:application/json' -H 'x-api-key:MY_API_KEY' -d '{"task":"Add new todo"}' http://localhost:3000/todos
@@ -14,16 +13,13 @@ const addTodo = (event, context, callback) => {
     });
   }
 
-  const newTodo = new Todo({ id: uuid.v1(), task });
+  const newTodo = new Todo({ task });
   newTodo
-    .save()
+    .save({ overwrite: false })
     .then(addedTodo =>
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify({
-          message: `Added the todo of id:${addedTodo.id}`,
-          addedTodo
-        })
+        body: JSON.stringify(addedTodo)
       })
     )
     .catch(err =>

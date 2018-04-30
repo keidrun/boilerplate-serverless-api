@@ -1,6 +1,6 @@
 import Todo from '../models/Todo';
 
-// curl -v -H 'x-api-key:MY_API_KEY' http://localhost:3000/todos/cb3dc780-484f-11e8-a0b9-c36d84fa8971
+// curl -v -H 'x-api-key:MY_API_KEY' http://localhost:3000/todos/87dd235b-909d-4381-ab4e-8b3cd20af34b
 const getTodo = (event, context, callback) => {
   const { id } = event.pathParameters;
 

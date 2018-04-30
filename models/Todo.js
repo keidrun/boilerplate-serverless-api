@@ -1,3 +1,4 @@
+import uuid from 'uuid';
 import dynamoose from '../services/dynamoose';
 const { Schema } = dynamoose;
 
@@ -13,7 +14,8 @@ const todoSchema = new Schema(
   {
     id: {
       type: String,
-      hashKey: true
+      hashKey: true,
+      default: () => uuid.v4()
     },
     task: {
       type: String,
